@@ -1,4 +1,4 @@
-import { getPokemon } from '@/fn/pokemon';
+import { getPokemon } from '@/fn/getPokemon';
 import { useQuery } from '@tanstack/react-query';
 
 export function usePokemon(id: string, initialData?:any) {

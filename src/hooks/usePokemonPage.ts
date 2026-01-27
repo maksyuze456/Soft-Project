@@ -1,4 +1,4 @@
-import { getPokemonPage } from '@/fn/pokemon'
+import { getPokemonPage } from '@/fn/getPokemonPage'
 import { useQuery, keepPreviousData } from '@tanstack/react-query'
 
 export function usePokemonPage(limit: number, offset: number) {

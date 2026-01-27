@@ -1,16 +1,11 @@
 
-import { getPokemon } from '@/fn/pokemon';
+
 import { PokemonCard } from '@/components/PokemonCard';
 import { usePokemon } from '@/hooks/usePokemon'
 import { createFileRoute, useNavigate } from '@tanstack/react-router'
 
 
 export const Route = createFileRoute('/pokemons/$id/')({
-    loader: async ({ params }) => {
-        return getPokemon({
-            data: {id: params.id}
-        })
-    },
     component: RouteComponent
 })
 

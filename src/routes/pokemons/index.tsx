@@ -3,18 +3,14 @@ import { useState } from 'react'
 import type { PaginationState, ColumnDef } from '@tanstack/react-table'
 import { usePokemonPage } from '@/hooks/usePokemonPage'
 import { usePagination } from '@/hooks/usePagination'
-import { extractIdFromUrl, buildSpriteUrl } from '@/fn/pokemon'
 import { PokemonCard } from '@/components/PokemonCard'
 import { Pagination } from '@/components/Pagination'
+import { PokemonEntry } from '@/types/PokemonTypes'
+import { buildSpriteUrl, extractIdFromUrl } from '@/lib/utils'
 
 export const Route = createFileRoute('/pokemons/')({
   component: RouteComponent,
 })
-
-type PokemonEntry = {
-  name: string
-  url: string
-}
 
 const PAGE_SIZE = 20
 
@@ -41,7 +37,6 @@ function RouteComponent() {
     pagination,
     onPaginationChange: setPagination,
   })
-
   if (isLoading) {
     return (
       <div className="flex items-center justify-center py-20">
