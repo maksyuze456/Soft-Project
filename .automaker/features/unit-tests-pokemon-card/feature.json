@@ -1,0 +1,12 @@
+{
+  "id": "unit-tests-pokemon-card",
+  "category": "Testing",
+  "title": "Unit Tests for PokemonCard Component",
+  "description": "Comprehensive unit tests for the PokemonCard component covering rendering, props validation, size variants, and hover interactions. Tests should verify image loading, name display, ID badge rendering, and accessibility attributes.",
+  "status": "backlog",
+  "priority": 1,
+  "complexity": "simple",
+  "dependencies": [],
+  "createdAt": "2026-01-28T12:14:56.234Z",
+  "updatedAt": "2026-01-28T12:14:56.234Z"
+}

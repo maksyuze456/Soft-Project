@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "notifications": [
+    {
+      "id": "cad40155-ecc8-4be7-a6a5-a6e23888895a",
+      "type": "spec_regeneration_complete",
+      "title": "Spec Generation Complete",
+      "message": "Created 20 features from the project specification.",
+      "createdAt": "2026-01-28T12:14:56.249Z",
+      "read": false,
+      "dismissed": false,
+      "projectPath": "/home/maksyuze456/soft-project"
+    }
+  ]
+}

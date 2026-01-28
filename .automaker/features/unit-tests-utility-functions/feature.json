@@ -1,0 +1,12 @@
+{
+  "id": "unit-tests-utility-functions",
+  "category": "Testing",
+  "title": "Unit Tests for Utility Functions",
+  "description": "Test coverage for utility functions including cn(), extractIdFromUrl(), and buildSpriteUrl(). Validates edge cases, error handling, and correct outputs for various inputs.",
+  "status": "backlog",
+  "priority": 1,
+  "complexity": "simple",
+  "dependencies": [],
+  "createdAt": "2026-01-28T12:14:56.235Z",
+  "updatedAt": "2026-01-28T12:14:56.235Z"
+}

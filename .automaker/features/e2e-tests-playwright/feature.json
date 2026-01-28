@@ -1,0 +1,15 @@
+{
+  "id": "e2e-tests-playwright",
+  "category": "Testing",
+  "title": "End-to-End Tests with Playwright",
+  "description": "Playwright test suite covering critical user journeys including browsing list, pagination, search, filtering, viewing details, and favorites management. Includes visual regression tests.",
+  "status": "backlog",
+  "priority": 1,
+  "complexity": "complex",
+  "dependencies": [
+    "integration-tests-pokemon-list",
+    "integration-tests-pokemon-detail"
+  ],
+  "createdAt": "2026-01-28T12:14:56.244Z",
+  "updatedAt": "2026-01-28T12:14:56.244Z"
+}

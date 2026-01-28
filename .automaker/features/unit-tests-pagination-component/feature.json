@@ -1,0 +1,12 @@
+{
+  "id": "unit-tests-pagination-component",
+  "category": "Testing",
+  "title": "Unit Tests for Pagination Component",
+  "description": "Unit tests for the Pagination component verifying button states, page number display, navigation callbacks, and disabled states for edge cases (first/last page).",
+  "status": "backlog",
+  "priority": 1,
+  "complexity": "simple",
+  "dependencies": [],
+  "createdAt": "2026-01-28T12:14:56.237Z",
+  "updatedAt": "2026-01-28T12:14:56.237Z"
+}

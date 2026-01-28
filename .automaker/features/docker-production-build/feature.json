@@ -1,0 +1,12 @@
+{
+  "id": "docker-production-build",
+  "category": "DevOps",
+  "title": "Docker Production Configuration",
+  "description": "Multi-stage Dockerfile optimized for production with Node.js Alpine base, proper caching layers, and security best practices. Includes .dockerignore and health check endpoint.",
+  "status": "backlog",
+  "priority": 1,
+  "complexity": "moderate",
+  "dependencies": [],
+  "createdAt": "2026-01-28T12:14:56.245Z",
+  "updatedAt": "2026-01-28T12:14:56.245Z"
+}

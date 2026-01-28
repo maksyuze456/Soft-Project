@@ -1,0 +1,12 @@
+{
+  "id": "favorites-system",
+  "category": "Core",
+  "title": "Favorite Pokemon System",
+  "description": "Allow users to mark Pokemon as favorites with persistent storage in localStorage. Adds favorite toggle button to cards and detail page, plus dedicated favorites view page.",
+  "status": "backlog",
+  "priority": 2,
+  "complexity": "moderate",
+  "dependencies": [],
+  "createdAt": "2026-01-28T12:14:56.243Z",
+  "updatedAt": "2026-01-28T12:14:56.243Z"
+}
