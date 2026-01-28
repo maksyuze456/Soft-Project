@@ -1,6 +1,5 @@
-import { createFileRoute, useNavigate } from "@tanstack/react-router";
-import { PokemonCard } from "@/components/PokemonCard";
-import { usePokemon } from "@/hooks/usePokemon";
+import { createFileRoute } from "@tanstack/react-router";
+import { PokemonDetailPage } from "@/pages/PokemonDetailPage/PokemonDetailPage";
 
 export const Route = createFileRoute("/pokemons/$id/")({
 	component: RouteComponent,
@@ -9,22 +8,6 @@ export const Route = createFileRoute("/pokemons/$id/")({
 function RouteComponent() {
 	const { id } = Route.useParams();
 	const loaderData = Route.useLoaderData();
-	const { data: pokemon, isLoading, isError } = usePokemon(id, loaderData);
-	const navigate = useNavigate();
 
-	if (isLoading) return <div>Loading...</div>;
-	if (isError || !pokemon) return <div>Error loading pokemon</div>;
-
-	return (
-		<div>
-			<PokemonCard
-				pokemon={{
-					id: pokemon.id,
-					name: pokemon.name,
-					url: pokemon.sprites?.dream_world?.front_default ?? "",
-				}}
-				onAction={() => navigate({ to: "/pokemons" })}
-			/>
-		</div>
-	);
+	return <PokemonDetailPage id={id} loaderData={loaderData} />;
 }

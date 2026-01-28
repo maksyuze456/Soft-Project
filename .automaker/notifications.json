@@ -28,9 +28,31 @@
       "title": "Feature Ready for Review",
       "message": "\"feature-1769604282829-xixywd9sj\" is ready for your review and approval.",
       "createdAt": "2026-01-28T12:46:28.785Z",
-      "read": false,
+      "read": true,
       "dismissed": false,
       "featureId": "feature-1769604282829-xixywd9sj",
+      "projectPath": "/home/maksyuze456/soft-project"
+    },
+    {
+      "id": "c2ba3d9d-b95c-4bf5-8f27-7d6e828266fd",
+      "type": "feature_waiting_approval",
+      "title": "Feature Ready for Review",
+      "message": "\"feature-1769610147249-iy2n9oy2k\" is ready for your review and approval.",
+      "createdAt": "2026-01-28T14:26:22.221Z",
+      "read": false,
+      "dismissed": false,
+      "featureId": "feature-1769610147249-iy2n9oy2k",
+      "projectPath": "/home/maksyuze456/soft-project"
+    },
+    {
+      "id": "0b101461-10dd-4a47-857b-91b66f271c2a",
+      "type": "feature_waiting_approval",
+      "title": "Feature Ready for Review",
+      "message": "\"feature-1769610147249-iy2n9oy2k\" is ready for your review and approval.",
+      "createdAt": "2026-01-28T14:30:41.051Z",
+      "read": false,
+      "dismissed": false,
+      "featureId": "feature-1769610147249-iy2n9oy2k",
       "projectPath": "/home/maksyuze456/soft-project"
     }
   ]

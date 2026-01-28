@@ -1,5 +1,5 @@
 import { keepPreviousData, useQuery } from "@tanstack/react-query";
-import { searchPokemon } from "@/fn/searchPokemon";
+import { searchPokemon } from "../fn/searchPokemon";
 
 export function useSearchPokemon(query: string, limit: number, offset: number) {
 	return useQuery({

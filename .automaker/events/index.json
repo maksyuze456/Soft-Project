@@ -2,6 +2,26 @@
   "version": 1,
   "events": [
     {
+      "id": "evt-1769610641053-af5ce1fb",
+      "trigger": "feature_success",
+      "timestamp": "2026-01-28T14:30:41.053Z",
+      "featureName": "Restructure project with page-based folder organization",
+      "featureId": "feature-1769610147249-iy2n9oy2k"
+    },
+    {
+      "id": "evt-1769610382229-998ba8c1",
+      "trigger": "feature_success",
+      "timestamp": "2026-01-28T14:26:22.229Z",
+      "featureName": "Restructure project with page-based folder organization",
+      "featureId": "feature-1769610147249-iy2n9oy2k"
+    },
+    {
+      "id": "evt-1769610147451-599a6c2f",
+      "trigger": "feature_created",
+      "timestamp": "2026-01-28T14:22:27.451Z",
+      "featureId": "feature-1769610147249-iy2n9oy2k"
+    },
+    {
       "id": "evt-1769604388790-adb25698",
       "trigger": "feature_success",
       "timestamp": "2026-01-28T12:46:28.790Z",

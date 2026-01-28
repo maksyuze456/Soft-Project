@@ -130,6 +130,10 @@
       <name>Fix Pokemon search to exclude alternate forms</name>
       <description>When searching some pokemons, the wrong ones gettings fetched, review the code where the querieng happens. The issue is that some forms of those pokemons are getting fetched, and when searching for individuals pokemon like pikachu, the other forms getting fetched such as Pikachu-rock-star, Pikachu-belle, Pikachu-pop-star. It has to be fixed. And i also know with pagination, the count of all pokemons is consistent and it is 1350. As an example, Pikachu-pop-star has id of 10082, thats wrong</description>
     </feature>
+    <feature>
+      <name>Restructure project with page-based folder organization</name>
+      <description>I want to have more cleaner file structure, i want to have page folder in src, that includes folders of individual pages, where inside that let&apos;s say PokemonsPage folder all the hooks and functions that are being used on that page, also destructed into different folder such hooks/ fn/ . And lastly the page component will be built in that folder, which then be used in routes</description>
+    </feature>
   </implemented_features>
 
   <additional_requirements>

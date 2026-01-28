@@ -1,5 +1,5 @@
 import { keepPreviousData, useQuery } from "@tanstack/react-query";
-import { getPokemonPage } from "@/fn/getPokemonPage";
+import { getPokemonPage } from "../fn/getPokemonPage";
 
 export function usePokemonPage(limit: number, offset: number) {
 	return useQuery({
