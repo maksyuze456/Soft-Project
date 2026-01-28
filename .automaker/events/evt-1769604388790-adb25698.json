@@ -1,0 +1,11 @@
+{
+  "id": "evt-1769604388790-adb25698",
+  "trigger": "feature_success",
+  "timestamp": "2026-01-28T12:46:28.790Z",
+  "projectPath": "/home/maksyuze456/soft-project",
+  "projectName": "soft-project",
+  "featureId": "feature-1769604282829-xixywd9sj",
+  "featureName": "",
+  "error": "Feature completed in 105s",
+  "passes": true
+}

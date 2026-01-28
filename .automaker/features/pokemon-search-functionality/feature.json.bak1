@@ -3,7 +3,7 @@
   "category": "Core",
   "title": "Pokemon Search by Name",
   "description": "Add search input to filter Pokemon by name on the list page. Implements debounced search with TanStack Query to fetch filtered results from PokeAPI's search endpoint, maintaining pagination support.",
-  "status": "verified",
+  "status": "completed",
   "priority": 1,
   "complexity": "moderate",
   "dependencies": [],

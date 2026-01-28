@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "events": [
+    {
+      "id": "evt-1769604388790-adb25698",
+      "trigger": "feature_success",
+      "timestamp": "2026-01-28T12:46:28.790Z",
+      "featureName": "",
+      "featureId": "feature-1769604282829-xixywd9sj"
+    },
+    {
+      "id": "evt-1769604283054-30824b4b",
+      "trigger": "feature_created",
+      "timestamp": "2026-01-28T12:44:43.054Z",
+      "featureId": "feature-1769604282829-xixywd9sj"
+    },
+    {
+      "id": "evt-1769603199509-bdb4d7bf",
+      "trigger": "feature_success",
+      "timestamp": "2026-01-28T12:26:39.509Z",
+      "featureName": "Pokemon Search by Name",
+      "featureId": "pokemon-search-functionality"
+    }
+  ]
+}

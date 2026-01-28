@@ -1,0 +1,33 @@
+{
+  "category": "Uncategorized",
+  "description": "When searching some pokemons, the wrong ones gettings fetched, review the code where the querieng happens. The issue is that some forms of those pokemons are getting fetched, and when searching for individuals pokemon like pikachu, the other forms getting fetched such as Pikachu-rock-star, Pikachu-belle, Pikachu-pop-star. It has to be fixed. And i also know with pagination, the count of all pokemons is consistent and it is 1350. As an example, Pikachu-pop-star has id of 10082, thats wrong",
+  "title": "Fix Pokemon search to exclude alternate forms",
+  "images": [],
+  "imagePaths": [],
+  "textFilePaths": [],
+  "skipTests": true,
+  "model": "claude-opus",
+  "thinkingLevel": "none",
+  "reasoningEffort": "none",
+  "branchName": "main",
+  "priority": 2,
+  "planningMode": "skip",
+  "requirePlanApproval": false,
+  "dependencies": [
+    "pokemon-search-functionality"
+  ],
+  "workMode": "current",
+  "titleGenerating": false,
+  "status": "verified",
+  "id": "feature-1769604282829-xixywd9sj",
+  "descriptionHistory": [
+    {
+      "description": "When searching some pokemons, the wrong ones gettings fetched, review the code where the querieng happens. The issue is that some forms of those pokemons are getting fetched, and when searching for individuals pokemon like pikachu, the other forms getting fetched such as Pikachu-rock-star, Pikachu-belle, Pikachu-pop-star. It has to be fixed. And i also know with pagination, the count of all pokemons is consistent and it is 1350. As an example, Pikachu-pop-star has id of 10082, thats wrong",
+      "timestamp": "2026-01-28T12:44:43.052Z",
+      "source": "initial"
+    }
+  ],
+  "startedAt": "2026-01-28T12:44:43.104Z",
+  "updatedAt": "2026-01-28T12:46:28.782Z",
+  "justFinishedAt": "2026-01-28T12:46:28.782Z"
+}

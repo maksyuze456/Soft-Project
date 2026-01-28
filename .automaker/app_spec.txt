@@ -122,6 +122,14 @@
         <location>src/types/PokemonTypes.ts</location>
       </file_locations>
     </feature>
+    <feature>
+      <name>Pokemon Search by Name</name>
+      <description>Add search input to filter Pokemon by name on the list page. Implements debounced search with TanStack Query to fetch filtered results from PokeAPI&apos;s search endpoint, maintaining pagination support.</description>
+    </feature>
+    <feature>
+      <name>Fix Pokemon search to exclude alternate forms</name>
+      <description>When searching some pokemons, the wrong ones gettings fetched, review the code where the querieng happens. The issue is that some forms of those pokemons are getting fetched, and when searching for individuals pokemon like pikachu, the other forms getting fetched such as Pikachu-rock-star, Pikachu-belle, Pikachu-pop-star. It has to be fixed. And i also know with pagination, the count of all pokemons is consistent and it is 1350. As an example, Pikachu-pop-star has id of 10082, thats wrong</description>
+    </feature>
   </implemented_features>
 
   <additional_requirements>
