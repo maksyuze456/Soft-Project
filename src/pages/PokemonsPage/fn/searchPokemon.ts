@@ -1,4 +1,5 @@
 import { createServerFn } from "@tanstack/react-start";
+import * as Sentry from "@sentry/tanstackstart-react";
 import { baseUrl } from "@/lib/utils";
 
 export const searchPokemon = createServerFn({ method: "GET" })
@@ -22,6 +23,11 @@ export const searchPokemon = createServerFn({ method: "GET" })
 		const response = await fetch(
 			`${baseUrl}/pokemon-species?limit=1500&offset=0`,
 		);
+		Sentry.metrics.count("external.api.request", 1, {
+			attributes: {
+				endpoint: "/pokemon-species",
+			}
+		});
 
 		if (!response.ok) {
 			throw new Error("Failed to fetch Pokémon for search");
@@ -46,6 +52,13 @@ export const searchPokemon = createServerFn({ method: "GET" })
 				// Convert /pokemon-species/ID to /pokemon/ID
 				url: species.url.replace("/pokemon-species/", "/pokemon/"),
 			}));
+
+		Sentry.metrics.count("pokemon.search.requests", 1, {
+			attributes: {
+				query: query,
+				result_count: filtered.length.toString(),
+			}
+		});
 
 		return {
 			count: filtered.length,
