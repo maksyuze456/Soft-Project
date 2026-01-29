@@ -1,7 +1,7 @@
-import { Pagination } from "@/components/Pagination";
-import { SearchInput } from "@/components/SearchInput";
 import { usePokemonList } from "./hooks/usePokemonList";
 import { PokemonGrid } from "./components/PokemonGrid";
+import { Pagination } from "./components/Pagination";
+import { SearchInput } from "./components/SearchInput";
 
 export function PokemonsPage() {
 	const {

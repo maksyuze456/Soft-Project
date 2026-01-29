@@ -54,6 +54,28 @@
       "dismissed": false,
       "featureId": "feature-1769610147249-iy2n9oy2k",
       "projectPath": "/home/maksyuze456/soft-project"
+    },
+    {
+      "id": "35da8fb5-8edf-4980-9107-bee49a81e41c",
+      "type": "feature_verified",
+      "title": "Feature Verified",
+      "message": "\"unit-tests-pokemon-card\" has been verified and is complete.",
+      "createdAt": "2026-01-29T07:45:09.905Z",
+      "read": false,
+      "dismissed": false,
+      "featureId": "unit-tests-pokemon-card",
+      "projectPath": "/home/maksyuze456/soft-project"
+    },
+    {
+      "id": "779084c0-109f-4751-9701-bbdcad254d09",
+      "type": "feature_verified",
+      "title": "Feature Verified",
+      "message": "\"unit-tests-pagination-component\" has been verified and is complete.",
+      "createdAt": "2026-01-29T07:57:22.676Z",
+      "read": false,
+      "dismissed": false,
+      "featureId": "unit-tests-pagination-component",
+      "projectPath": "/home/maksyuze456/soft-project"
     }
   ]
 }
