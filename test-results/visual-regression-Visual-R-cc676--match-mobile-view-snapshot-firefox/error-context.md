@@ -1,0 +1,141 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - heading "Pokemon" [level=1] [ref=e3]
+    - generic [ref=e4]:
+      - img [ref=e5]
+      - textbox "Search Pokemon by name..." [ref=e7]
+    - generic [ref=e8]:
+      - generic [ref=e9]:
+        - generic [ref=e10]:
+          - generic [ref=e11]: "#001"
+          - img "Bulbasaur" [ref=e12]
+        - generic [ref=e14]: Bulbasaur
+        - button "View Pokemon" [ref=e16] [cursor=pointer]
+      - generic [ref=e17]:
+        - generic [ref=e18]:
+          - generic [ref=e19]: "#002"
+          - img "Ivysaur" [ref=e20]
+        - generic [ref=e22]: Ivysaur
+        - button "View Pokemon" [ref=e24] [cursor=pointer]
+      - generic [ref=e25]:
+        - generic [ref=e26]:
+          - generic [ref=e27]: "#003"
+          - img "Venusaur" [ref=e28]
+        - generic [ref=e30]: Venusaur
+        - button "View Pokemon" [ref=e32] [cursor=pointer]
+      - generic [ref=e33]:
+        - generic [ref=e34]:
+          - generic [ref=e35]: "#004"
+          - img "Charmander" [ref=e36]
+        - generic [ref=e38]: Charmander
+        - button "View Pokemon" [ref=e40] [cursor=pointer]
+      - generic [ref=e41]:
+        - generic [ref=e42]:
+          - generic [ref=e43]: "#005"
+          - img "Charmeleon" [ref=e44]
+        - generic [ref=e46]: Charmeleon
+        - button "View Pokemon" [ref=e48] [cursor=pointer]
+      - generic [ref=e49]:
+        - generic [ref=e50]:
+          - generic [ref=e51]: "#006"
+          - img "Charizard" [ref=e52]
+        - generic [ref=e54]: Charizard
+        - button "View Pokemon" [ref=e56] [cursor=pointer]
+      - generic [ref=e57]:
+        - generic [ref=e58]:
+          - generic [ref=e59]: "#007"
+          - img "Squirtle" [ref=e60]
+        - generic [ref=e62]: Squirtle
+        - button "View Pokemon" [ref=e64] [cursor=pointer]
+      - generic [ref=e65]:
+        - generic [ref=e66]:
+          - generic [ref=e67]: "#008"
+          - img "Wartortle" [ref=e68]
+        - generic [ref=e70]: Wartortle
+        - button "View Pokemon" [ref=e72] [cursor=pointer]
+      - generic [ref=e73]:
+        - generic [ref=e74]:
+          - generic [ref=e75]: "#009"
+          - img "Blastoise" [ref=e76]
+        - generic [ref=e78]: Blastoise
+        - button "View Pokemon" [ref=e80] [cursor=pointer]
+      - generic [ref=e81]:
+        - generic [ref=e82]:
+          - generic [ref=e83]: "#010"
+          - img "Caterpie" [ref=e84]
+        - generic [ref=e86]: Caterpie
+        - button "View Pokemon" [ref=e88] [cursor=pointer]
+      - generic [ref=e89]:
+        - generic [ref=e90]:
+          - generic [ref=e91]: "#011"
+          - img "Metapod" [ref=e92]
+        - generic [ref=e94]: Metapod
+        - button "View Pokemon" [ref=e96] [cursor=pointer]
+      - generic [ref=e97]:
+        - generic [ref=e98]:
+          - generic [ref=e99]: "#012"
+          - img "Butterfree" [ref=e100]
+        - generic [ref=e102]: Butterfree
+        - button "View Pokemon" [ref=e104] [cursor=pointer]
+      - generic [ref=e105]:
+        - generic [ref=e106]:
+          - generic [ref=e107]: "#013"
+          - img "Weedle" [ref=e108]
+        - generic [ref=e110]: Weedle
+        - button "View Pokemon" [ref=e112] [cursor=pointer]
+      - generic [ref=e113]:
+        - generic [ref=e114]:
+          - generic [ref=e115]: "#014"
+          - img "Kakuna" [ref=e116]
+        - generic [ref=e118]: Kakuna
+        - button "View Pokemon" [ref=e120] [cursor=pointer]
+      - generic [ref=e121]:
+        - generic [ref=e122]:
+          - generic [ref=e123]: "#015"
+          - img "Beedrill" [ref=e124]
+        - generic [ref=e126]: Beedrill
+        - button "View Pokemon" [ref=e128] [cursor=pointer]
+      - generic [ref=e129]:
+        - generic [ref=e130]:
+          - generic [ref=e131]: "#016"
+          - img "Pidgey" [ref=e132]
+        - generic [ref=e134]: Pidgey
+        - button "View Pokemon" [ref=e136] [cursor=pointer]
+      - generic [ref=e137]:
+        - generic [ref=e138]:
+          - generic [ref=e139]: "#017"
+          - img "Pidgeotto" [ref=e140]
+        - generic [ref=e142]: Pidgeotto
+        - button "View Pokemon" [ref=e144] [cursor=pointer]
+      - generic [ref=e145]:
+        - generic [ref=e146]:
+          - generic [ref=e147]: "#018"
+          - img "Pidgeot" [ref=e148]
+        - generic [ref=e150]: Pidgeot
+        - button "View Pokemon" [ref=e152] [cursor=pointer]
+      - generic [ref=e153]:
+        - generic [ref=e154]:
+          - generic [ref=e155]: "#019"
+          - img "Rattata" [ref=e156]
+        - generic [ref=e158]: Rattata
+        - button "View Pokemon" [ref=e160] [cursor=pointer]
+      - generic [ref=e161]:
+        - generic [ref=e162]:
+          - generic [ref=e163]: "#020"
+          - img "Raticate" [ref=e164]
+        - generic [ref=e166]: Raticate
+        - button "View Pokemon" [ref=e168] [cursor=pointer]
+    - generic [ref=e169]:
+      - button "Previous" [disabled]
+      - generic [ref=e170]: Page 1 of 52
+      - button "Next" [ref=e171] [cursor=pointer]
+  - generic [ref=e172]:
+    - img [ref=e174]
+    - button "Open Tanstack query devtools" [ref=e223] [cursor=pointer]:
+      - img [ref=e224]
+  - button "Open TanStack Devtools" [ref=e273] [cursor=pointer]:
+    - img "TanStack Devtools" [ref=e274]
+```
