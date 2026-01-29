@@ -1,14 +1,17 @@
 import { useNavigate } from "@tanstack/react-router";
 import { PokemonCard } from "@/components/PokemonCard";
 import { usePokemon } from "./hooks/usePokemon";
+import type { getPokemon } from "./fn/getPokemon";
+
+type PokemonData = Awaited<ReturnType<typeof getPokemon>>;
 
 interface PokemonDetailPageProps {
 	id: string;
-	loaderData?: any;
+	loaderData?: PokemonData;
 }
 
-export function PokemonDetailPage({ id, loaderData }: PokemonDetailPageProps) {
-	const { data: pokemon, isLoading, isError } = usePokemon(id, loaderData);
+export function PokemonDetailPage({ id }: PokemonDetailPageProps) {
+	const { data: pokemon, isLoading, isError } = usePokemon(id);
 	const navigate = useNavigate();
 
 	if (isLoading) return <div>Loading...</div>;

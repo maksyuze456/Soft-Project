@@ -7,7 +7,6 @@ export const Route = createFileRoute("/pokemons/$id/")({
 
 function RouteComponent() {
 	const { id } = Route.useParams();
-	const loaderData = Route.useLoaderData();
 
-	return <PokemonDetailPage id={id} loaderData={loaderData} />;
+	return <PokemonDetailPage id={id}  />;
 }
