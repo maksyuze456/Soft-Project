@@ -1,11 +1,13 @@
 import { createServerFn } from "@tanstack/react-start";
 import * as Sentry from "@sentry/tanstackstart-react";
 import { baseUrl } from "@/lib/utils";
+import { sentryMiddleware } from "@/lib/sentryMiddleware";
 
 export const searchPokemon = createServerFn({ method: "GET" })
 	.inputValidator(
 		(data: { query: string; limit?: number; offset?: number }) => data,
 	)
+	.middleware([sentryMiddleware])
 	.handler(async ({ data }) => {
 		const query = data.query.toLowerCase().trim();
 		const limit = data.limit ?? 20;

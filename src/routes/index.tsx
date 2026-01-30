@@ -1,45 +1,22 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { SentryErrorBoundary } from "@/components/SentryErrorBoundary";
+import { createFileRoute, Link } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/")({
-	component: App,
+	component: Home,
 });
 
-function App() {
+function Home() {
 	return (
-		<div className="p-8">
-			<h1 className="text-2xl font-bold mb-4">Hello</h1>
-
-			{/* Example: Sentry ErrorBoundary wrapping a component that may throw */}
-			<SentryErrorBoundary>
-				<SentryTestSection />
-			</SentryErrorBoundary>
-		</div>
-	);
-}
-
-/**
- * Test section to verify Sentry integration.
- * Contains a button that throws an error to test Sentry error capturing.
- * REMOVE THIS AFTER VERIFYING SENTRY WORKS.
- */
-function SentryTestSection() {
-	return (
-		<div className="mt-8 p-4 border border-gray-200 rounded-lg">
-			<h2 className="text-lg font-semibold mb-2">Sentry Test</h2>
-			<p className="text-gray-600 mb-4">
-				Click the button below to trigger a test error and verify Sentry is
-				working correctly.
+		<div className="flex flex-1 flex-col items-center justify-center overflow-hidden p-8">
+			<h1 className="text-4xl font-bold">Welcome to the Pokemon World</h1>
+			<p className="mt-4 text-lg text-muted-foreground">
+				Discover and explore your favorite Pokemon
 			</p>
-			<button
-				type="button"
-				onClick={() => {
-					throw new Error("Sentry Test Error");
-				}}
-				className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 transition-colors"
+			<Link
+				to="/pokemons"
+				className="mt-8 rounded-lg bg-red-500 px-6 py-3 font-semibold text-white transition-colors hover:bg-red-600"
 			>
-				Break the world
-			</button>
+				Explore Pokemon
+			</Link>
 		</div>
 	);
 }

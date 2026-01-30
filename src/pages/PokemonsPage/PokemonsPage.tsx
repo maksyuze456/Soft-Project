@@ -1,7 +1,10 @@
 import { usePokemonList } from "./hooks/usePokemonList";
 import { PokemonGrid } from "./components/PokemonGrid";
+import { PokemonGridSkeleton } from "./components/PokemonGridSkeleton";
 import { Pagination } from "./components/Pagination";
 import { SearchInput } from "./components/SearchInput";
+import { Button } from "@/components/ui/button";
+
 
 export function PokemonsPage() {
 	const {
@@ -17,12 +20,8 @@ export function PokemonsPage() {
 		table,
 	} = usePokemonList();
 
-	if (isLoading) {
-		return (
-			<div className="flex items-center justify-center py-20">
-				<p className="text-lg text-muted-foreground">Loading Pokemon...</p>
-			</div>
-		);
+	const testClientError = () => {
+		throw new Error("Client error")
 	}
 
 	if (isError) {
@@ -34,29 +33,39 @@ export function PokemonsPage() {
 			</div>
 		);
 	}
+	/*
+					<Button onClick={testClientError} variant="destructive" className="mb-2">
+			</Button>
+	*/
 
 	return (
 		<div className="mx-auto max-w-5xl px-4 py-8">
-			<h1 className="mb-6 text-2xl font-bold tracking-tight">Pokemon</h1>
-
+			<h1 className="mb-4 text-2xl font-bold tracking-tight">Pokemons</h1>
 			<SearchInput
 				value={searchQuery}
 				onChange={handleSearchChange}
 				placeholder="Search Pokemon by name..."
 				className="mb-6"
+				disabled={isLoading}
 			/>
 
-			{isSearching && totalCount === 0 && (
-				<div className="flex items-center justify-center py-10">
-					<p className="text-muted-foreground">
-						No Pokemon found for "{debouncedSearch}"
-					</p>
-				</div>
+			{isLoading ? (
+				<PokemonGridSkeleton />
+			) : (
+				<>
+					{isSearching && totalCount === 0 && (
+						<div className="flex items-center justify-center py-10">
+							<p className="text-muted-foreground">
+								No Pokemon found for "{debouncedSearch}"
+							</p>
+						</div>
+					)}
+
+					<PokemonGrid pokemonList={pokemonList} isPlaceholderData={isPlaceholderData} />
+
+					<Pagination table={table} />
+				</>
 			)}
-
-			<PokemonGrid pokemonList={pokemonList} isPlaceholderData={isPlaceholderData} />
-
-			<Pagination table={table} />
 		</div>
 	);
 }

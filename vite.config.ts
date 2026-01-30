@@ -30,6 +30,9 @@ const config = defineConfig({
 		}),
 		viteReact(),
 	],
+	server: {
+		sourcemapIgnoreList: () => true
+	}
 });
 
 export default config;

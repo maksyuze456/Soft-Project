@@ -5,6 +5,7 @@ interface SearchInputProps {
 	onChange: (value: string) => void;
 	placeholder?: string;
 	className?: string;
+	disabled?: boolean;
 }
 
 export function SearchInput({
@@ -12,6 +13,7 @@ export function SearchInput({
 	onChange,
 	placeholder = "Search...",
 	className,
+	disabled = false,
 }: SearchInputProps) {
 	return (
 		<div className={cn("relative", className)}>
@@ -35,7 +37,11 @@ export function SearchInput({
 				value={value}
 				onChange={(e) => onChange(e.target.value)}
 				placeholder={placeholder}
-				className="h-10 w-full rounded-md border border-input bg-background pl-10 pr-4 text-sm outline-none transition-colors placeholder:text-muted-foreground focus:border-ring focus:ring-ring/50 focus:ring-[3px]"
+				disabled={disabled}
+				className={cn(
+					"h-10 w-full rounded-md border border-input bg-background pl-10 pr-4 text-sm outline-none transition-colors placeholder:text-muted-foreground focus:border-ring focus:ring-ring/50 focus:ring-[3px]",
+					disabled && "cursor-not-allowed opacity-50",
+				)}
 				data-testid="search-input"
 			/>
 			{value && (

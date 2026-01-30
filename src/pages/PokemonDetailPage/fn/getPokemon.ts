@@ -1,9 +1,17 @@
 import { createServerFn } from "@tanstack/react-start";
 import * as Sentry from "@sentry/tanstackstart-react";
 import { baseUrl } from "@/lib/utils";
+import { sentryMiddleware } from "@/lib/sentryMiddleware";
+
+
+export type PokemonStat = {
+	name: string;
+	baseStat: number;
+};
 
 export const getPokemon = createServerFn({ method: "GET" })
 	.inputValidator((data: { id: string }) => data)
+	.middleware([sentryMiddleware])
 	.handler(async ({ data }) => {
 		return Sentry.startSpan(
 			{
@@ -39,10 +47,19 @@ export const getPokemon = createServerFn({ method: "GET" })
 					}
 				})
 
+				const stats: PokemonStat[] = pokemon.stats.map(
+					(stat: { base_stat: number; stat: { name: string } }) => ({
+						name: stat.stat.name,
+						baseStat: stat.base_stat,
+					})
+				);
+
+
 				return {
 					name: pokemon.name,
 					id: pokemon.id,
 					sprites: pokemon.sprites.other,
+					stats,
 				};
 			}
 		);

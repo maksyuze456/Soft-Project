@@ -6,7 +6,7 @@ import { usePokemonPage } from "./usePokemonPage";
 import { useSearchPokemon } from "./useSearchPokemon";
 import type { PokemonEntry } from "@/types/PokemonTypes";
 
-const PAGE_SIZE = 20;
+const PAGE_SIZE = 8;
 
 const columns: ColumnDef<PokemonEntry>[] = [
 	{ accessorKey: "name" },

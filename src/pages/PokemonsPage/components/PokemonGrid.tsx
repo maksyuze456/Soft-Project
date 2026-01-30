@@ -13,7 +13,7 @@ export function PokemonGrid({ pokemonList, isPlaceholderData }: PokemonGridProps
 
 	return (
 		<div
-			className={`grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4 ${isPlaceholderData ? "opacity-60" : ""}`}
+			className={`grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4 animate-in fade-in duration-300 ${isPlaceholderData ? "opacity-60" : ""}`}
 		>
 			{pokemonList.map((entry) => {
 				const id = extractIdFromUrl(entry.url);
