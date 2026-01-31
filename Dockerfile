@@ -43,9 +43,10 @@ COPY --from=builder --chown=appuser:nodejs /app/.output ./.output
 COPY --from=builder --chown=appuser:nodejs /app/instrument.server.mjs ./instrument.server.mjs
 COPY --from=builder --chown=appuser:nodejs /app/package.json ./package.json
 
-# Install only production dependencies for any runtime needs
-# The .output directory is self-contained, but we keep package.json for metadata
-RUN npm pkg delete scripts devDependencies && \
+# Install only production dependencies for runtime needs (e.g. @sentry/node)
+COPY --from=builder --chown=appuser:nodejs /app/package-lock.json ./package-lock.json
+RUN npm install --omit=dev && \
+    npm pkg delete scripts && \
     rm -rf /root/.npm
 
 # Switch to non-root user
