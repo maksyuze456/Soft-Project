@@ -14,11 +14,15 @@ FROM node:22-alpine AS builder
 
 WORKDIR /app
 
+# Sentry auth token for source map uploads during build
+ARG SENTRY_AUTH_TOKEN
+ENV SENTRY_AUTH_TOKEN=${SENTRY_AUTH_TOKEN}
+
 # Copy dependencies from deps stage
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
-# Build the application
+# Build the application (Sentry plugin uploads source maps here)
 RUN npm run build
 
 # Stage 3: Production
