@@ -3,7 +3,6 @@ import { PokemonGrid } from "./components/PokemonGrid";
 import { PokemonGridSkeleton } from "./components/PokemonGridSkeleton";
 import { Pagination } from "./components/Pagination";
 import { SearchInput } from "./components/SearchInput";
-import { Button } from "@/components/ui/button";
 
 
 export function PokemonsPage() {
@@ -20,10 +19,6 @@ export function PokemonsPage() {
 		table,
 	} = usePokemonList();
 
-	const testClientError = () => {
-		throw new Error("Client error")
-	}
-
 	if (isError) {
 		return (
 			<div className="flex items-center justify-center py-20">
@@ -33,11 +28,6 @@ export function PokemonsPage() {
 			</div>
 		);
 	}
-	/*
-					<Button onClick={testClientError} variant="destructive" className="mb-2">
-			</Button>
-	*/
-
 	return (
 		<div className="mx-auto max-w-5xl px-4 py-8">
 			<h1 className="mb-4 text-2xl font-bold tracking-tight">Pokemons</h1>

@@ -11,6 +11,7 @@ export function PokemonGridSkeleton({ count = 8 }: PokemonGridSkeletonProps) {
 			className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4 animate-in fade-in duration-200"
 		>
 			{Array.from({ length: count }).map((_, index) => (
+				// biome-ignore lint/suspicious/noArrayIndexKey: static skeleton list never reorders
 				<PokemonCardSkeleton key={index} size="md" />
 			))}
 		</div>

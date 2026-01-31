@@ -15,6 +15,7 @@ export function PokemonStatsSkeleton() {
 			</CardHeader>
 			<CardContent className="space-y-3">
 				{Array.from({ length: statCount }).map((_, index) => (
+					// biome-ignore lint/suspicious/noArrayIndexKey: static skeleton list never reorders
 					<div key={index} className="flex items-center gap-3">
 						<Skeleton className="w-20 h-4 shrink-0" />
 						<Skeleton className="w-10 h-4 shrink-0" />
