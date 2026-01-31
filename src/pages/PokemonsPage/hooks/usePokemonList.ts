@@ -1,10 +1,10 @@
 import type { ColumnDef, PaginationState } from "@tanstack/react-table";
 import { useState } from "react";
 import { useDebounce } from "@/hooks/useDebounce";
+import type { PokemonEntry } from "@/types/PokemonTypes";
 import { usePagination } from "./usePagination";
 import { usePokemonPage } from "./usePokemonPage";
 import { useSearchPokemon } from "./useSearchPokemon";
-import type { PokemonEntry } from "@/types/PokemonTypes";
 
 const PAGE_SIZE = 8;
 
@@ -26,7 +26,11 @@ export function usePokemonList() {
 	const offset = pagination.pageIndex * pagination.pageSize;
 
 	const pageQuery = usePokemonPage(PAGE_SIZE, offset);
-	const searchQueryResult = useSearchPokemon(debouncedSearch, PAGE_SIZE, offset);
+	const searchQueryResult = useSearchPokemon(
+		debouncedSearch,
+		PAGE_SIZE,
+		offset,
+	);
 
 	const activeQuery = isSearching ? searchQueryResult : pageQuery;
 	const { data, isLoading, isError, isPlaceholderData } = activeQuery;

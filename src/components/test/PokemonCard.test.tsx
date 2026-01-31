@@ -1,5 +1,5 @@
-import { render, screen, fireEvent } from "@testing-library/react";
-import { describe, it, expect, vi } from "vitest";
+import { fireEvent, render, screen } from "@testing-library/react";
+import { describe, expect, it, vi } from "vitest";
 import { PokemonCard } from "../PokemonCard";
 
 const mockPokemon = {
@@ -17,7 +17,9 @@ describe("PokemonCard", () => {
 			expect(screen.getByRole("img")).toBeInTheDocument();
 			expect(screen.getByText("Pikachu")).toBeInTheDocument();
 			expect(screen.getByText("#025")).toBeInTheDocument();
-			expect(screen.getByRole("button", { name: "View Pokemon" })).toBeInTheDocument();
+			expect(
+				screen.getByRole("button", { name: "View Pokemon" }),
+			).toBeInTheDocument();
 		});
 
 		it("renders the Pokemon image with correct src and alt attributes", () => {
@@ -41,7 +43,11 @@ describe("PokemonCard", () => {
 
 		it("handles single character names", () => {
 			const onAction = vi.fn();
-			const singleCharPokemon = { id: 1, name: "a", url: "https://example.com/a.png" };
+			const singleCharPokemon = {
+				id: 1,
+				name: "a",
+				url: "https://example.com/a.png",
+			};
 			render(<PokemonCard pokemon={singleCharPokemon} onAction={onAction} />);
 
 			expect(screen.getByText("A")).toBeInTheDocument();
@@ -49,7 +55,11 @@ describe("PokemonCard", () => {
 
 		it("handles names with multiple words correctly", () => {
 			const onAction = vi.fn();
-			const multiWordPokemon = { id: 122, name: "mr-mime", url: "https://example.com/mr-mime.png" };
+			const multiWordPokemon = {
+				id: 122,
+				name: "mr-mime",
+				url: "https://example.com/mr-mime.png",
+			};
 			render(<PokemonCard pokemon={multiWordPokemon} onAction={onAction} />);
 
 			expect(screen.getByText("Mr-mime")).toBeInTheDocument();
@@ -59,7 +69,11 @@ describe("PokemonCard", () => {
 	describe("ID badge rendering", () => {
 		it("pads single digit IDs with zeros", () => {
 			const onAction = vi.fn();
-			const pokemon = { id: 1, name: "bulbasaur", url: "https://example.com/1.png" };
+			const pokemon = {
+				id: 1,
+				name: "bulbasaur",
+				url: "https://example.com/1.png",
+			};
 			render(<PokemonCard pokemon={pokemon} onAction={onAction} />);
 
 			expect(screen.getByText("#001")).toBeInTheDocument();
@@ -74,7 +88,11 @@ describe("PokemonCard", () => {
 
 		it("displays triple digit IDs without padding", () => {
 			const onAction = vi.fn();
-			const pokemon = { id: 150, name: "mewtwo", url: "https://example.com/150.png" };
+			const pokemon = {
+				id: 150,
+				name: "mewtwo",
+				url: "https://example.com/150.png",
+			};
 			render(<PokemonCard pokemon={pokemon} onAction={onAction} />);
 
 			expect(screen.getByText("#150")).toBeInTheDocument();
@@ -82,7 +100,11 @@ describe("PokemonCard", () => {
 
 		it("handles IDs larger than 999", () => {
 			const onAction = vi.fn();
-			const pokemon = { id: 1000, name: "large-id", url: "https://example.com/1000.png" };
+			const pokemon = {
+				id: 1000,
+				name: "large-id",
+				url: "https://example.com/1000.png",
+			};
 			render(<PokemonCard pokemon={pokemon} onAction={onAction} />);
 
 			expect(screen.getByText("#1000")).toBeInTheDocument();
@@ -92,7 +114,9 @@ describe("PokemonCard", () => {
 	describe("size variants", () => {
 		it("renders with default size when size prop is not provided", () => {
 			const onAction = vi.fn();
-			const { container } = render(<PokemonCard pokemon={mockPokemon} onAction={onAction} />);
+			const { container } = render(
+				<PokemonCard pokemon={mockPokemon} onAction={onAction} />,
+			);
 
 			const image = screen.getByRole("img");
 			expect(image).toHaveClass("h-48", "w-48");
@@ -103,7 +127,13 @@ describe("PokemonCard", () => {
 
 		it("renders with default size when size prop is explicitly set to default", () => {
 			const onAction = vi.fn();
-			const { container } = render(<PokemonCard pokemon={mockPokemon} onAction={onAction} size="default" />);
+			const { container } = render(
+				<PokemonCard
+					pokemon={mockPokemon}
+					onAction={onAction}
+					size="default"
+				/>,
+			);
 
 			const image = screen.getByRole("img");
 			expect(image).toHaveClass("h-48", "w-48");
@@ -114,7 +144,9 @@ describe("PokemonCard", () => {
 
 		it("renders with md size when size prop is set to md", () => {
 			const onAction = vi.fn();
-			const { container } = render(<PokemonCard pokemon={mockPokemon} onAction={onAction} size="md" />);
+			const { container } = render(
+				<PokemonCard pokemon={mockPokemon} onAction={onAction} size="md" />,
+			);
 
 			const image = screen.getByRole("img");
 			expect(image).toHaveClass("h-32", "w-32");
@@ -125,7 +157,13 @@ describe("PokemonCard", () => {
 
 		it("applies correct title styling for default size", () => {
 			const onAction = vi.fn();
-			const { container } = render(<PokemonCard pokemon={mockPokemon} onAction={onAction} size="default" />);
+			const { container } = render(
+				<PokemonCard
+					pokemon={mockPokemon}
+					onAction={onAction}
+					size="default"
+				/>,
+			);
 
 			const title = container.querySelector('[data-slot="card-title"]');
 			expect(title).toHaveClass("text-xl");
@@ -133,7 +171,9 @@ describe("PokemonCard", () => {
 
 		it("applies correct title styling for md size", () => {
 			const onAction = vi.fn();
-			const { container } = render(<PokemonCard pokemon={mockPokemon} onAction={onAction} size="md" />);
+			const { container } = render(
+				<PokemonCard pokemon={mockPokemon} onAction={onAction} size="md" />,
+			);
 
 			const title = container.querySelector('[data-slot="card-title"]');
 			expect(title).toHaveClass("text-base");
@@ -201,7 +241,9 @@ describe("PokemonCard", () => {
 	describe("card structure", () => {
 		it("has correct card wrapper classes for hover effect", () => {
 			const onAction = vi.fn();
-			const { container } = render(<PokemonCard pokemon={mockPokemon} onAction={onAction} />);
+			const { container } = render(
+				<PokemonCard pokemon={mockPokemon} onAction={onAction} />,
+			);
 
 			const card = container.firstChild;
 			expect(card).toHaveClass("group", "hover:shadow-lg");
@@ -217,9 +259,13 @@ describe("PokemonCard", () => {
 
 		it("renders badge with proper positioning classes", () => {
 			const onAction = vi.fn();
-			const { container } = render(<PokemonCard pokemon={mockPokemon} onAction={onAction} />);
+			const { container } = render(
+				<PokemonCard pokemon={mockPokemon} onAction={onAction} />,
+			);
 
-			const badge = container.querySelector("[class*='absolute'][class*='top-3'][class*='right-3']");
+			const badge = container.querySelector(
+				"[class*='absolute'][class*='top-3'][class*='right-3']",
+			);
 			expect(badge).toBeInTheDocument();
 			expect(badge).toHaveTextContent("#025");
 		});
@@ -228,18 +274,31 @@ describe("PokemonCard", () => {
 	describe("props validation", () => {
 		it("renders correctly with minimum required props", () => {
 			const onAction = vi.fn();
-			const minimalPokemon = { id: 1, name: "test", url: "https://example.com/test.png" };
+			const minimalPokemon = {
+				id: 1,
+				name: "test",
+				url: "https://example.com/test.png",
+			};
 			render(<PokemonCard pokemon={minimalPokemon} onAction={onAction} />);
 
 			expect(screen.getByText("Test")).toBeInTheDocument();
 			expect(screen.getByText("#001")).toBeInTheDocument();
-			expect(screen.getByRole("img")).toHaveAttribute("src", "https://example.com/test.png");
+			expect(screen.getByRole("img")).toHaveAttribute(
+				"src",
+				"https://example.com/test.png",
+			);
 		});
 
 		it("handles empty string name gracefully", () => {
 			const onAction = vi.fn();
-			const emptyNamePokemon = { id: 1, name: "", url: "https://example.com/test.png" };
-			const { container } = render(<PokemonCard pokemon={emptyNamePokemon} onAction={onAction} />);
+			const emptyNamePokemon = {
+				id: 1,
+				name: "",
+				url: "https://example.com/test.png",
+			};
+			const { container } = render(
+				<PokemonCard pokemon={emptyNamePokemon} onAction={onAction} />,
+			);
 
 			const image = container.querySelector("img");
 			expect(image).toHaveAttribute("alt", "");
@@ -247,7 +306,11 @@ describe("PokemonCard", () => {
 
 		it("handles zero ID correctly", () => {
 			const onAction = vi.fn();
-			const zeroIdPokemon = { id: 0, name: "test", url: "https://example.com/test.png" };
+			const zeroIdPokemon = {
+				id: 0,
+				name: "test",
+				url: "https://example.com/test.png",
+			};
 			render(<PokemonCard pokemon={zeroIdPokemon} onAction={onAction} />);
 
 			expect(screen.getByText("#000")).toBeInTheDocument();

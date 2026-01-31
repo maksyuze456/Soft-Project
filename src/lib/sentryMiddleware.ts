@@ -1,5 +1,5 @@
-import { createMiddleware } from "@tanstack/react-start";
 import * as Sentry from "@sentry/tanstackstart-react";
+import { createMiddleware } from "@tanstack/react-start";
 
 /**
  * Sentry middleware that automatically captures server-side errors.
@@ -19,7 +19,12 @@ export const sentryMiddleware = createMiddleware({ type: "function" }).server(
 		try {
 			const result = await next();
 			// Handle case where error is returned in result object (workaround for older versions)
-			if (result && typeof result === "object" && "error" in result && result.error) {
+			if (
+				result &&
+				typeof result === "object" &&
+				"error" in result &&
+				result.error
+			) {
 				throw result.error;
 			}
 			return result;

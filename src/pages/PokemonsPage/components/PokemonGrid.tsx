@@ -8,7 +8,10 @@ interface PokemonGridProps {
 	isPlaceholderData: boolean;
 }
 
-export function PokemonGrid({ pokemonList, isPlaceholderData }: PokemonGridProps) {
+export function PokemonGrid({
+	pokemonList,
+	isPlaceholderData,
+}: PokemonGridProps) {
 	const navigate = useNavigate();
 
 	return (

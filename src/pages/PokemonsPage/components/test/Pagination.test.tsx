@@ -1,7 +1,7 @@
-import { render, screen, fireEvent } from "@testing-library/react";
-import { describe, it, expect, vi } from "vitest";
-import { Pagination } from "../Pagination";
 import type { Table } from "@tanstack/react-table";
+import { fireEvent, render, screen } from "@testing-library/react";
+import { describe, expect, it, vi } from "vitest";
+import { Pagination } from "../Pagination";
 
 // Helper function to create a mock table with specific pagination state
 function createMockTable(options: {
@@ -37,7 +37,9 @@ describe("Pagination", () => {
 
 			render(<Pagination table={mockTable} />);
 
-			expect(screen.getByRole("button", { name: "Previous" })).toBeInTheDocument();
+			expect(
+				screen.getByRole("button", { name: "Previous" }),
+			).toBeInTheDocument();
 			expect(screen.getByRole("button", { name: "Next" })).toBeInTheDocument();
 		});
 
@@ -315,7 +317,13 @@ describe("Pagination", () => {
 			const { container } = render(<Pagination table={mockTable} />);
 
 			const wrapper = container.firstChild;
-			expect(wrapper).toHaveClass("mt-8", "flex", "items-center", "justify-center", "gap-4");
+			expect(wrapper).toHaveClass(
+				"mt-8",
+				"flex",
+				"items-center",
+				"justify-center",
+				"gap-4",
+			);
 		});
 
 		it("page display has correct text styling classes", () => {

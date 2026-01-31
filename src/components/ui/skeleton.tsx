@@ -9,7 +9,7 @@ function Skeleton({
 			data-testid="skeleton"
 			className={cn(
 				"rounded-md bg-muted/60 animate-[pulse_2s_cubic-bezier(0.4,0,0.6,1)_infinite]",
-				className
+				className,
 			)}
 			{...props}
 		/>

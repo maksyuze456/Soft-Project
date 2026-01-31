@@ -1,6 +1,6 @@
 import * as Sentry from "@sentry/tanstackstart-react";
+import type { ErrorInfo, ReactNode } from "react";
 import { Component } from "react";
-import type { ReactNode, ErrorInfo } from "react";
 
 interface ErrorBoundaryProps {
 	children: ReactNode;
@@ -77,11 +77,14 @@ class CustomErrorBoundary extends Component<
  * </SentryErrorBoundary>
  * ```
  */
-export const SentryErrorBoundary = Sentry.withErrorBoundary(CustomErrorBoundary, {
-	// Sentry error boundary options
-	// You can customize these options as needed:
-	// showDialog: true, // Show Sentry's user feedback dialog
-	// dialogOptions: { ... }, // Customize the feedback dialog
-});
+export const SentryErrorBoundary = Sentry.withErrorBoundary(
+	CustomErrorBoundary,
+	{
+		// Sentry error boundary options
+		// You can customize these options as needed:
+		// showDialog: true, // Show Sentry's user feedback dialog
+		// dialogOptions: { ... }, // Customize the feedback dialog
+	},
+);
 
 export { CustomErrorBoundary };

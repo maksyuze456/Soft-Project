@@ -51,7 +51,7 @@ export function StatBar({ label, value, maxValue = 255 }: StatBarProps) {
 				<div
 					className={cn(
 						"absolute inset-y-0 left-0 rounded-full transition-all duration-500",
-						colorClass
+						colorClass,
 					)}
 					style={{ width: `${percentage}%` }}
 					data-testid={`stat-bar-${label}`}
@@ -60,7 +60,9 @@ export function StatBar({ label, value, maxValue = 255 }: StatBarProps) {
 			<span
 				className={cn(
 					"w-20 text-xs font-medium text-right shrink-0",
-					percentage >= 60 ? "text-green-600 dark:text-green-400" : "text-muted-foreground"
+					percentage >= 60
+						? "text-green-600 dark:text-green-400"
+						: "text-muted-foreground",
 				)}
 				data-testid={`stat-percentile-${label}`}
 			>

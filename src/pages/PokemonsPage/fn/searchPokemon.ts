@@ -1,7 +1,7 @@
-import { createServerFn } from "@tanstack/react-start";
 import * as Sentry from "@sentry/tanstackstart-react";
-import { baseUrl } from "@/lib/utils";
+import { createServerFn } from "@tanstack/react-start";
 import { sentryMiddleware } from "@/lib/sentryMiddleware";
+import { baseUrl } from "@/lib/utils";
 
 export const searchPokemon = createServerFn({ method: "GET" })
 	.inputValidator(
@@ -28,7 +28,7 @@ export const searchPokemon = createServerFn({ method: "GET" })
 		Sentry.metrics.count("external.api.request", 1, {
 			attributes: {
 				endpoint: "/pokemon-species",
-			}
+			},
 		});
 
 		if (!response.ok) {
@@ -59,7 +59,7 @@ export const searchPokemon = createServerFn({ method: "GET" })
 			attributes: {
 				query: query,
 				result_count: filtered.length.toString(),
-			}
+			},
 		});
 
 		return {

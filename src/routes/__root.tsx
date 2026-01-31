@@ -1,6 +1,6 @@
+import * as Sentry from "@sentry/tanstackstart-react";
 import { TanStackDevtools } from "@tanstack/react-devtools";
 import { QueryClientProvider } from "@tanstack/react-query";
-import * as Sentry from "@sentry/tanstackstart-react";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import {
 	createRootRoute,
@@ -9,8 +9,8 @@ import {
 	Scripts,
 } from "@tanstack/react-router";
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
-import { queryClient } from "@/lib/queryClient";
 import { Header } from "@/components/Header";
+import { queryClient } from "@/lib/queryClient";
 import appCss from "../styles.css?url";
 
 export const Route = createRootRoute({
@@ -41,13 +41,12 @@ export const Route = createRootRoute({
 
 function RootComponent() {
 	return (
-		
 		<QueryClientProvider client={queryClient}>
 			<div className="flex min-h-screen w-full flex-col bg-gray-100">
 				<Sentry.ErrorBoundary
 					beforeCapture={(scope) => scope.setTag("section", "header")}
 				>
-				<Header />
+					<Header />
 				</Sentry.ErrorBoundary>
 				{/* Main content area with pokeball watermark */}
 				<main className="relative flex flex-1 flex-col overflow-auto">
@@ -59,9 +58,23 @@ function RootComponent() {
 							fill="currentColor"
 							aria-hidden="true"
 						>
-							<circle cx="50" cy="50" r="48" fill="none" stroke="currentColor" strokeWidth="4" />
+							<circle
+								cx="50"
+								cy="50"
+								r="48"
+								fill="none"
+								stroke="currentColor"
+								strokeWidth="4"
+							/>
 							<path d="M2 50 H98" stroke="currentColor" strokeWidth="4" />
-							<circle cx="50" cy="50" r="12" fill="none" stroke="currentColor" strokeWidth="4" />
+							<circle
+								cx="50"
+								cy="50"
+								r="12"
+								fill="none"
+								stroke="currentColor"
+								strokeWidth="4"
+							/>
 							<circle cx="50" cy="50" r="6" fill="currentColor" />
 						</svg>
 					</div>

@@ -1,9 +1,8 @@
-import { usePokemonList } from "./hooks/usePokemonList";
+import { Pagination } from "./components/Pagination";
 import { PokemonGrid } from "./components/PokemonGrid";
 import { PokemonGridSkeleton } from "./components/PokemonGridSkeleton";
-import { Pagination } from "./components/Pagination";
 import { SearchInput } from "./components/SearchInput";
-
+import { usePokemonList } from "./hooks/usePokemonList";
 
 export function PokemonsPage() {
 	const {
@@ -51,7 +50,10 @@ export function PokemonsPage() {
 						</div>
 					)}
 
-					<PokemonGrid pokemonList={pokemonList} isPlaceholderData={isPlaceholderData} />
+					<PokemonGrid
+						pokemonList={pokemonList}
+						isPlaceholderData={isPlaceholderData}
+					/>
 
 					<Pagination table={table} />
 				</>

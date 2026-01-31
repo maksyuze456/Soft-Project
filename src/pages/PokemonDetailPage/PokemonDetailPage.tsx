@@ -1,10 +1,10 @@
 import { useNavigate } from "@tanstack/react-router";
-import { PokemonCard } from "@/components/PokemonCard";
 import { BackButton } from "@/components/BackButton";
-import { PokemonStats } from "./components/PokemonStats";
+import { PokemonCard } from "@/components/PokemonCard";
 import { PokemonDetailSkeleton } from "./components/PokemonDetailSkeleton";
-import { usePokemon } from "./hooks/usePokemon";
+import { PokemonStats } from "./components/PokemonStats";
 import type { getPokemon } from "./fn/getPokemon";
+import { usePokemon } from "./hooks/usePokemon";
 
 type PokemonData = Awaited<ReturnType<typeof getPokemon>>;
 

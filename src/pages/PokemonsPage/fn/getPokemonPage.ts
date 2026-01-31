@@ -1,7 +1,7 @@
-import { createServerFn } from "@tanstack/react-start";
 import * as Sentry from "@sentry/tanstackstart-react";
-import { baseUrl } from "@/lib/utils";
+import { createServerFn } from "@tanstack/react-start";
 import { sentryMiddleware } from "@/lib/sentryMiddleware";
+import { baseUrl } from "@/lib/utils";
 
 export const getPokemonPage = createServerFn({ method: "GET" })
 	.inputValidator((data: { limit?: number; offset?: number }) => data)
@@ -17,7 +17,7 @@ export const getPokemonPage = createServerFn({ method: "GET" })
 		Sentry.metrics.count("external.api.request", 1, {
 			attributes: {
 				endpoint: "/pokemon-species",
-			}
+			},
 		});
 
 		if (!response.ok) {
@@ -36,7 +36,7 @@ export const getPokemonPage = createServerFn({ method: "GET" })
 				limit: limit.toString(),
 				offset: offset.toString(),
 				result_count: speciesData.results.length.toString(),
-			}
+			},
 		});
 
 		// Convert species URLs to pokemon URLs for consistency with the rest of the app

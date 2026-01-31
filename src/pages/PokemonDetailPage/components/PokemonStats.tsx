@@ -1,11 +1,6 @@
-import {
-	Card,
-	CardContent,
-	CardHeader,
-	CardTitle,
-} from "@/components/ui/card";
-import { StatBar } from "./StatBar";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import type { PokemonStat } from "../fn/getPokemon";
+import { StatBar } from "./StatBar";
 
 type PokemonStatsProps = {
 	stats: PokemonStat[];
@@ -21,11 +16,7 @@ export function PokemonStats({ stats }: PokemonStatsProps) {
 			</CardHeader>
 			<CardContent className="space-y-3">
 				{stats.map((stat) => (
-					<StatBar
-						key={stat.name}
-						label={stat.name}
-						value={stat.baseStat}
-					/>
+					<StatBar key={stat.name} label={stat.name} value={stat.baseStat} />
 				))}
 				<div className="pt-3 border-t border-border">
 					<div className="flex items-center justify-between">

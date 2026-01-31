@@ -8,5 +8,5 @@ export const Route = createFileRoute("/pokemons/$id/")({
 function RouteComponent() {
 	const { id } = Route.useParams();
 
-	return <PokemonDetailPage id={id}  />;
+	return <PokemonDetailPage id={id} />;
 }

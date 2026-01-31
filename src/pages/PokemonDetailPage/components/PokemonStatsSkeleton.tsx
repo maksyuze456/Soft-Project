@@ -1,15 +1,14 @@
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
-import {
-	Card,
-	CardContent,
-	CardHeader,
-} from "@/components/ui/card";
 
 export function PokemonStatsSkeleton() {
 	const statCount = 6;
 
 	return (
-		<Card className="w-full max-w-sm mx-auto" data-testid="pokemon-stats-skeleton">
+		<Card
+			className="w-full max-w-sm mx-auto"
+			data-testid="pokemon-stats-skeleton"
+		>
 			<CardHeader className="pb-2">
 				<Skeleton className="h-6 w-24" />
 			</CardHeader>

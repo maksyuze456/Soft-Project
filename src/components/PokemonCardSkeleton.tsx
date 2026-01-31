@@ -1,10 +1,10 @@
-import { Skeleton } from "@/components/ui/skeleton";
 import {
 	Card,
 	CardContent,
 	CardFooter,
 	CardHeader,
 } from "@/components/ui/card";
+import { Skeleton } from "@/components/ui/skeleton";
 
 type PokemonCardSkeletonProps = {
 	size?: "default" | "md";

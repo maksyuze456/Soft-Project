@@ -1,10 +1,13 @@
-import { Skeleton } from "@/components/ui/skeleton";
 import { PokemonCardSkeleton } from "@/components/PokemonCardSkeleton";
+import { Skeleton } from "@/components/ui/skeleton";
 import { PokemonStatsSkeleton } from "./PokemonStatsSkeleton";
 
 export function PokemonDetailSkeleton() {
 	return (
-		<div data-testid="pokemon-detail-skeleton" className="animate-in fade-in duration-200">
+		<div
+			data-testid="pokemon-detail-skeleton"
+			className="animate-in fade-in duration-200"
+		>
 			<div className="flex flex-col items-center">
 				<div className="w-full max-w-4xl px-4 pt-4">
 					<div className="flex justify-start">

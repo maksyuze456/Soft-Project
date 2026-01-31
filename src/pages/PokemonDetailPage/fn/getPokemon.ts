@@ -1,8 +1,7 @@
-import { createServerFn } from "@tanstack/react-start";
 import * as Sentry from "@sentry/tanstackstart-react";
-import { baseUrl } from "@/lib/utils";
+import { createServerFn } from "@tanstack/react-start";
 import { sentryMiddleware } from "@/lib/sentryMiddleware";
-
+import { baseUrl } from "@/lib/utils";
 
 export type PokemonStat = {
 	name: string;
@@ -26,8 +25,8 @@ export const getPokemon = createServerFn({ method: "GET" })
 				Sentry.metrics.count("external.api.request", 1, {
 					attributes: {
 						endpoint: "/pokemon",
-					}
-				})
+					},
+				});
 				if (!response.ok) {
 					span.setStatus({ code: 2, message: "Pokemon not found" });
 					throw new Error("Pokemon not found");
@@ -44,16 +43,15 @@ export const getPokemon = createServerFn({ method: "GET" })
 					attributes: {
 						pokemon_id: pokemon.id.toString(),
 						pokemon_name: pokemon.name,
-					}
-				})
+					},
+				});
 
 				const stats: PokemonStat[] = pokemon.stats.map(
 					(stat: { base_stat: number; stat: { name: string } }) => ({
 						name: stat.stat.name,
 						baseStat: stat.base_stat,
-					})
+					}),
 				);
-
 
 				return {
 					name: pokemon.name,
@@ -61,6 +59,6 @@ export const getPokemon = createServerFn({ method: "GET" })
 					sprites: pokemon.sprites.other,
 					stats,
 				};
-			}
+			},
 		);
 	});

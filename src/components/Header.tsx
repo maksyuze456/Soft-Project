@@ -51,7 +51,7 @@ export function Header() {
 				<div className="flex items-center">
 					<Link
 						onClick={() => {
-							throw new Error("Error in header")
+							throw new Error("Error in header");
 						}}
 						to="/about"
 						className={`relative flex items-center gap-2 text-sm font-medium transition-colors ${
